@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-06-24T00:00:00+08:00",
+  "title": "Design System: 搭个话",
+  "extensions": {
+    "colorMeta": {
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#101820",
+        "tonalRamp": ["#050809", "#101820", "#26313B", "#4F6070", "#8795A1", "#C7D2DC", "#EAF1F4", "#F8FAFB"]
+      },
+      "signal": {
+        "role": "primary",
+        "displayName": "Signal Teal",
+        "canonical": "#0E7C7B",
+        "tonalRamp": ["#042827", "#0A4F4E", "#0E7C7B", "#1B9E99", "#67C4BD", "#A9DED8", "#DFF2EF", "#F2FAF8"]
+      },
+      "pulse": {
+        "role": "secondary",
+        "displayName": "Pulse Coral",
+        "canonical": "#D95F48",
+        "tonalRamp": ["#3A100B", "#7E281B", "#B84431", "#D95F48", "#EC917F", "#F6C1B6", "#FBE9E4", "#FFF7F4"]
+      },
+      "orbit": {
+        "role": "secondary",
+        "displayName": "Orbit Blue",
+        "canonical": "#315ED8",
+        "tonalRamp": ["#0B1743", "#18318A", "#315ED8", "#6F8CE8", "#AABBF3", "#D5DDF9", "#E7EDFD", "#F5F7FF"]
+      },
+      "amber": {
+        "role": "tertiary",
+        "displayName": "Amber Checkpoint",
+        "canonical": "#9B6A05",
+        "tonalRamp": ["#2B1B00", "#604000", "#9B6A05", "#CA920D", "#E6B94B", "#F4D98D", "#FFF2D4", "#FFF9ED"]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Compact product overview titles, never marketing-scale heroes."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Dense IM content, message summaries, state explanations."
+      }
+    },
+    "shadows": [
+      {
+        "name": "panel-lift",
+        "value": "0 8px 18px rgba(16, 24, 32, 0.08)",
+        "purpose": "Floating panels and dialogs only."
+      }
+    ],
+    "motion": [
+      {
+        "name": "state-shift",
+        "value": "150ms ease-out",
+        "purpose": "Navigation, chip selection, and button feedback."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "compact",
+        "value": "480px"
+      },
+      {
+        "name": "wide",
+        "value": "840px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Compact Signal Teal action for send, create, and confirm.",
+      "html": "<button class=\"ds-btn-primary\">发送</button>",
+      "css": ".ds-btn-primary { background: #0E7C7B; color: #FFFFFF; border: 0; border-radius: 8px; padding: 10px 14px; font: 700 14px/1.2 system-ui, sans-serif; transition: background 150ms ease-out, transform 150ms ease-out; } .ds-btn-primary:hover { background: #0A6A69; } .ds-btn-primary:focus-visible { outline: 3px solid #A9DED8; outline-offset: 2px; } .ds-btn-primary:active { transform: translateY(1px); }"
+    },
+    {
+      "name": "State Chip",
+      "kind": "chip",
+      "refersTo": "chip-selected",
+      "description": "Pill chip for unread, audit, connection, pinned, and muted states.",
+      "html": "<span class=\"ds-chip\">在线</span>",
+      "css": ".ds-chip { display: inline-flex; align-items: center; gap: 6px; background: #DFF2EF; color: #0E7C7B; border-radius: 999px; padding: 5px 9px; font: 700 12px/1.2 system-ui, sans-serif; }"
+    },
+    {
+      "name": "Surface Card",
+      "kind": "card",
+      "refersTo": "card-surface",
+      "description": "Flat repeated container for conversation and architecture nodes.",
+      "html": "<article class=\"ds-card\"><strong>产品内测群</strong><p>@所有人 新版本强更弹窗走验收</p></article>",
+      "css": ".ds-card { background: #FFFFFF; color: #101820; border: 1px solid #D7E0E8; border-radius: 8px; padding: 14px; font-family: system-ui, sans-serif; } .ds-card strong { display: block; font-size: 17px; line-height: 1.24; } .ds-card p { margin: 6px 0 0; color: #4F6070; font-size: 14px; line-height: 1.45; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Signal Loom",
+    "overview": "搭个话的界面像一张正在编织的对话信号网：消息、关系、资产和运营配置不是分散模块，而是沿着可扫描的状态路径展开。",
+    "keyCharacteristics": [
+      "高扫描效率：头像、标题、摘要、状态、动作形成连续阅读路径。",
+      "状态优先：未读、失败、审核、锁定、权限不足都有文字或图标。",
+      "轻质结构：用边界、色块和轨道表达层级，默认不靠大阴影。",
+      "默认数据真实：演示内容覆盖 IM、钱包、朋友圈、商品、设置和运营开关。"
+    ],
+    "rules": [
+      {
+        "name": "The Signal Ratio Rule",
+        "body": "Signal Teal 在单屏面积中不要超过 10%，只用于当前选择、主行动和关键状态。",
+        "section": "colors"
+      },
+      {
+        "name": "The No Clone Green Rule",
+        "body": "禁止把 IM 默认做成微信式绿色列表；绿色只允许作为小面积在线状态点。",
+        "section": "colors"
+      },
+      {
+        "name": "The Flat First Rule",
+        "body": "列表、卡片和输入框静止时用边界和底色表达，不用宽软阴影装饰。",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do 保持文本对比度达到 WCAG AA，次级说明也不能过浅。",
+      "Do 用文字、图标和位置同时表达关键状态。",
+      "Do 让默认数据覆盖正常、空、失败、审核、锁定、权限不足。"
+    ],
+    "donts": [
+      "Don't 做微信式绿色列表克隆。",
+      "Don't 做深色霓虹 IM 控制台。",
+      "Don't 做一屏一堆圆角卡片的 AI SaaS 模板。",
+      "Don't 使用渐变文字、玻璃拟态、巨大阴影或装饰性动效。"
+    ]
+  }
+}
