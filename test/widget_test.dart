@@ -1,5 +1,6 @@
 import 'package:blinblin_com/src/ui/im_app.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:flutter/widgets.dart';
 
 void main() {
   testWidgets('IM shell renders demo data and architecture map', (
@@ -14,12 +15,29 @@ void main() {
     expect(find.text('架构'), findsWidgets);
     expect(find.text('对话信号台'), findsOneWidget);
     expect(find.text('强公告已读'), findsWidgets);
+
+    await tester.scrollUntilVisible(
+      find.text('林小满'),
+      320,
+      scrollable: find.byType(Scrollable).first,
+    );
     expect(find.text('林小满'), findsOneWidget);
+
+    await tester.scrollUntilVisible(
+      find.text('产品内测群'),
+      320,
+      scrollable: find.byType(Scrollable).first,
+    );
     expect(find.text('产品内测群'), findsOneWidget);
 
     await tester.tap(find.text('我的'));
     await tester.pumpAndSettle();
 
+    await tester.scrollUntilVisible(
+      find.text('状态验收'),
+      320,
+      scrollable: find.byType(Scrollable).first,
+    );
     expect(find.text('状态验收'), findsOneWidget);
     expect(find.text('空会话'), findsOneWidget);
     expect(find.text('消息发送失败'), findsOneWidget);
